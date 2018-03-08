@@ -45,7 +45,6 @@ public interface IndexList<T> {
 	 * @param e reference to the new element
 	 * @throws IndexOutOfBoundsException whenever the value
 	 * of index is not in the valid range from 0 to size.
-	 * @return reference to the element that was replaced	
 	 **/ 
 	void add(int index, T e) throws IndexOutOfBoundsException; 
 

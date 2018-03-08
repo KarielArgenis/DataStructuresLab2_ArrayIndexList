@@ -17,20 +17,29 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 	public void add(int index, E e) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
-			throw new IndexOutOfBoundsException("add(): Index "+index+" is out of bounds.");
+			throw new IndexOutOfBoundsException("add(): Index "+index+" is invalid.");
+//		if (size==element.length) {
+//			changeCapacity(CAPTOAR);
+//		}
+//		moveDataOnePositionTR(index,size);
+//		element[index] = e;
 		size++;
 	}
 
 
 	public void add(E e) {
+		if(size==element.length) {
+			changeCapacity(CAPTOAR);
+		}
+		element[size] = e;
 		size++;
 	}
 
 
 	public E get(int index) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
-			throw new IndexOutOfBoundsException("get(): Index "+index+" is out of bounds.");
-		return null; 
+			throw new IndexOutOfBoundsException("get(): Index "+index+" is invalid.");
+		return element[index]; 
 	}
 
 
@@ -41,7 +50,7 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 	public E remove(int index) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
-			throw new IndexOutOfBoundsException("remove(): Index "+index+" is out of bounds.");
+			throw new IndexOutOfBoundsException("remove(): Index "+index+" is invalid.");
 		size--;
 		return null;
 	}
@@ -49,7 +58,7 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 	public E set(int index, E e) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
-			throw new IndexOutOfBoundsException("set(): Index "+index+" is out of bounds.");
+			throw new IndexOutOfBoundsException("set(): Index "+index+" is invalid.");
 		return null;
 	}
 
