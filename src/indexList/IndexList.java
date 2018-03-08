@@ -59,6 +59,6 @@ public interface IndexList<T> {
 	<T1> T1[] toArray(T1[] array);
 
 	
-	// int capacity(); 
+	int capacity(); 
 
 }

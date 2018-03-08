@@ -90,7 +90,7 @@ public class ArrayIndexListTester {
 		    showElement(list,i); 
 		
 		// remove comment characters on the next line to work on Exercise 2
-//		System.out.println("\n The capacity of the list is " + list.capacity() + "\n"); 
+		System.out.println("\n The capacity of the list is " + list.capacity() + "\n"); 
 	}
 	
 	private static void showListAfterDeleting(IndexList<Integer> list, int pos) { 

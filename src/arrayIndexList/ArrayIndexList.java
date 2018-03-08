@@ -3,9 +3,9 @@ package arrayIndexList;
 import indexList.IndexList;
 
 public class ArrayIndexList<E> implements IndexList<E> {
-	private static final int INITCAP = 5; 
-	private static final int CAPTOAR = 5; 
-	private static final int MAXEMPTYPOS = 10; 
+	private static final int INITCAP = 1; 
+	private static final int CAPTOAR = 1; 
+	private static final int MAXEMPTYPOS = 2; 
 	private E[] element; 
 	private int size; 
 
@@ -109,7 +109,6 @@ public class ArrayIndexList<E> implements IndexList<E> {
 			element[pos-1] = element[pos]; 
 	}
 
-
 	// The following two methods are to be implemented as part of an exercise
 	public Object[] toArray() {
 		// TODO es in Exercise 3
@@ -123,4 +122,8 @@ public class ArrayIndexList<E> implements IndexList<E> {
 		return null;
 	}
 
+	public int capacity() {
+		return element.length;
+	}
+	
 }
