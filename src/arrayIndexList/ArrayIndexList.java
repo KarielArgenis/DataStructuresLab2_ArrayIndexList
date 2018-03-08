@@ -49,10 +49,16 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 
 	public E remove(int index) throws IndexOutOfBoundsException {
-		if (index < 0 || index > size)
+		if (index < 0 || index >= size)
 			throw new IndexOutOfBoundsException("remove(): Index "+index+" is invalid.");
+		else {
+		E removed = element[index];
+		moveDataOnePositionTL(index+1, size-1);
 		size--;
-		return null;
+		if(element.length-size > MAXEMPTYPOS)
+			changeCapacity((-CAPTOAR));
+		return removed;
+		}
 	}
 
 
