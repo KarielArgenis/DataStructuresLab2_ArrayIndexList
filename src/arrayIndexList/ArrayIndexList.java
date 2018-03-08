@@ -18,11 +18,11 @@ public class ArrayIndexList<E> implements IndexList<E> {
 	public void add(int index, E e) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
 			throw new IndexOutOfBoundsException("add(): Index "+index+" is invalid.");
-//		if (size==element.length) {
-//			changeCapacity(CAPTOAR);
-//		}
-//		moveDataOnePositionTR(index,size);
-//		element[index] = e;
+		if (size==element.length) {
+			changeCapacity(CAPTOAR);
+		}
+		moveDataOnePositionTR(index,size-1);
+		element[index] = e;
 		size++;
 	}
 
@@ -59,7 +59,9 @@ public class ArrayIndexList<E> implements IndexList<E> {
 	public E set(int index, E e) throws IndexOutOfBoundsException {
 		if (index < 0 || index > size)
 			throw new IndexOutOfBoundsException("set(): Index "+index+" is invalid.");
-		return null;
+		E replaced =  element[index];
+		element[index] = e;
+		return replaced;
 	}
 
 
